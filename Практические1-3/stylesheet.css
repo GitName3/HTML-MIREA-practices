@@ -1,0 +1,136 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@900&display=swap');
+
+header{
+    width: 100%;
+   border: 2px solid black;
+   padding: 10px;
+   background-color:aqua;
+   position: relative;
+}
+main{
+    width: 100%;
+    border: 2px solid black;
+    padding: 10px;
+    background-color: aquamarine;
+    font-style: initial;
+}
+article{
+    width: 90%;
+    border: 2px solid black;
+    padding: 10px;
+    background-color: azure;
+    font-style: oblique;
+
+}
+nav.ref{
+    width: 35%;
+   border: 2px solid black;
+   padding: 10px;
+   background-color: aqua;
+   font-style: normal;
+}
+section.hover{
+    width: 30%;
+    border: 5px dashed black;
+    padding: 10px;
+    background-color: aquamarine;
+    font-style:inherit; 
+}
+section.active{
+    width: 30%;
+    border: 5px double black;
+    padding: 10px;
+    background-color: aquamarine;
+    font-style:initial; 
+}
+aside.visited{
+    width: 25%;
+    border: 5px outset black;
+    padding: 10px;
+    background-color: azure;
+    font-style:oblique; 
+    position: fixed right;
+}
+section.visited.active{
+    width: 95%;
+    border: 2px double black;
+    padding: 10px;
+    background-color: aqua;
+    font-style:normal; 
+}
+footer{
+    width: 40%;
+    border: 2px solid black;
+    padding: 10px;
+    background-color: azure;
+    font-style: normal;
+}
+address{
+    width: 50%;
+   border: 2px solid black;
+   padding: 10px;
+   background-color: azure;
+}
+h1, h2{
+    font-family: 'Roboto', sans-serif;
+}
+blockquote{
+
+}
+div.pic{
+    border: 2px solid black;
+}
+section.logo{
+    position: fixed;
+    margin-left: 90%;
+}
+h1{
+    position: sticky;
+    top: 0;
+    text-align: center;
+}
+.main{
+    margin: 50px;
+    text-align: center;
+    position: relative;
+}
+#li1{
+    height: 50px;
+    width: 200px;
+    display: block;
+    background: yellow;
+    text-decoration:line-through;
+}
+#li2{
+    height: 50px;
+    width: 200px;
+    display: block;
+    background: seagreen;
+    text-decoration:line-through;
+}
+#li3{
+    height: 50px;
+    width: 200px;
+    display: block;
+    background: salmon;
+    text-decoration:line-through;
+}
+#li4{
+    height: 50px;
+    width: 200px;
+    display: block;
+    background: sienna;
+    text-decoration:line-through;
+}
+#Mc1{
+    height: 20px;
+    width: 300px;
+    display: block;
+    background: aqua;
+}
+#Mc2{
+    height: 20px;
+    width: 300px;
+    display: block;
+    background: aquamarine;
+}

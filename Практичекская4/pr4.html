@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <link rel="stylesheet" href="pr4.css"> 
+        <h1>Работа  №4</h1>
+        <video width="720" height="480" controls loop autoplay src="./RickRoll.mp4">
+        </video> 
+    <body>
+        <h2> Форма №1</h2>
+        <form action="" method="get" class="f1">
+            <p>
+                <label for="name"> Введите имя:</label>
+                <input type="text" name="name" id="name" required placeholder="На английском" > 
+            </p>
+            <p>
+                <label for="email"> Введите email:</label>
+                <input type="email" name="email" id="email" required placeholder="Не забудь @"> 
+            </p>
+            <p>
+                <label for="phone"> Введите телефон:</label>
+                <input type="tel" name="phone" id="phone" pattern="\+7-[0-9]{3}-[0-9]{3}-[0-9]{2}-[0-9]{2}" placeholder="+7-xxx-xxx-xx-xx"> 
+            </p>
+            <p>
+                <label for="password"> Введите пароль:</label>
+                <input type="password" name="password" id="password" required placeholder="* будет скрыт пароль"> 
+            </p>
+            <button type="submit">Отправить</button>
+        </form>
+        <h2> Форма №2</h2>
+        <form action="" method="get" class="f2">
+            <p>
+                <label for="radio" name="radio">Выбирите: </label> <br>
+                <fieldset>
+                    <legend> цифра</legend>
+                    <input type="radio" name="radio" id="radio" value="1"> 1
+                    <input type="radio" name="radio" id="radio" value="2"> 2
+                    <input type="radio" name="radio" id="radio" value="3"> 3
+                </fieldset>
+            </p>
+            <p>
+                <label for="checkbox">Галочка </label>
+                <input type="checkbox" name="checkbox" id="checkbox" checked>
+            </p>
+            <p>
+                <label for="date">Дата </label>
+                <input type="datetime-local" name="date" id="date" >
+            </p> 
+            <p>
+                <label for="file">Прекрипите что-нибудь: </label>
+                <input type="file" name="file" id="file" required>
+            </p>
+            <p>
+                <label for="max">Число:</label>
+                <input type="number" name="max" id="max" max="10" min="0"> 
+            </p>
+            <p>
+                <label for="city">Выбирите город </label>
+                <select name="city" id="city" multiple>
+                    <option value="">--Выбирите--</option>
+                    <option value="moskva">Москва</option>
+                    <option value="petersburg">Санкт-Петербург</option>
+                    <option value="tula">Тула</option>
+                    <option value="kazan">Казань</option>
+                    <option value="fryanovo">Фряново</option>
+                </select>
+            </p>
+            <p>
+                <label for="about">Напишите что-то:</label><br>
+                <textarea id="about" rows="7" cols="35" maxlength="100" minlength="10" placeholder="Тут пиши" required></textarea>
+            </p>
+            <button type="submit">Отправить</button>
+        </form>
+    </body>
+    <bottom>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d9000.382931168999!2d37.467554692747!3d55.669935400000014!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46b54dc1d23b51c3%3A0x74763ed59c81ccb6!2z0KDQotCjINCc0JjQoNCt0JA!5e0!3m2!1sru!2sru!4v1696203461615!5m2!1sru!2sru" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </bottom>
+</html>

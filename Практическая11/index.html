@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <div class="task1">
+            <div class="litter" id="litter">
+                <h1>Корзина:</h1>
+                <h2 id="allvalue">Общая стоимость: 0</h2>
+                <button id="add">добавить</button>
+                <button id="del">удалить</button>
+            </div>
+            <div class="elements" id="elements">
+                <h1>Элементы: <button id="sort">Сортировка</button></h1>
+                <div class="elem" id="el0">
+                    <h3>Элемент1</h3>
+                    <h3>Цена: <b id="value0">100</b></h3>
+                    <h3>Кол-во: <b id="ammount0">0</b></h3>
+                </div>
+                <div class="elem" id="el1">
+                    <h3>Элемент2 </h3>
+                    <h3>Цена: <b id="value1">200</b></h3>
+                    <h3>Кол-во: <b id="ammount1">0</b></h3>
+                </div>
+                <div class="elem" id="el2">
+                    <h3>Элемент3</h3>
+                    <h3>Цена: <b id="value2">300</b></h3>
+                    <h3>Кол-во: <b id="ammount2">0</b></h3>
+                </div>
+            </div>
+            <script>
+                function getRandomInt(max) {
+                    return Math.floor(Math.random() * max);
+                }
+                function getnewArr(arr2){
+                    let newarr = [];
+                    for (let i=0; i<arr2.length; i++){
+                        if (arr2[i]>=3 && arr2[i]<=6) {
+                            newarr.unshift(arr2[i]);
+                        }                       
+                    }
+                    return newarr;
+                }
+
+                let arr = [];
+                let arr2 = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+                let na = getnewArr(arr2);
+                var allval = 0;
+                var litter = document.getElementById("litter");
+                var add = document.getElementById("add");
+                var del = document.getElementById("del");
+                var elems = document.getElementById("elements");
+                var sort = document.getElementById("sort")
+                add.onclick = function(){
+                    let numb = getRandomInt(3);
+                    arr.unshift(numb);
+                    var val = document.getElementById("allvalue");
+                    allval+=parseInt(document.getElementById("value"+numb).textContent);
+                    val.textContent = "Общая стоимость: "+allval;
+                    var ele = document.getElementById("el"+numb);
+                    var amo = document.getElementById("ammount"+numb);
+                    var newamo = parseInt(amo.textContent)+1;
+                    amo.textContent = newamo;
+                    if (newamo==1){
+                        litter.appendChild(ele);
+                        elems.removeChild(ele);
+                    }
+                }
+                del.onclick = function(){
+                        let numb = arr[0];
+                        arr.shift();
+                        var val = document.getElementById("allvalue");
+                        allval-=parseInt(document.getElementById("value"+numb).textContent);
+                        if (allval >=0){
+                            val.textContent = "Общая стоимость: "+allval;
+                        }else{
+                            allval=0;
+                            val.textContent = "Общая стоимость: "+allval;
+                        }
+                        var amo = document.getElementById("ammount"+numb);
+                        var newamo = parseInt(amo.textContent)-1;
+                        amo.textContent = newamo;
+                        if (newamo == 0 ){
+                            amo.textContent = 0;
+                            var ele = document.getElementById("el"+numb);
+                            elems.appendChild(ele);
+                            litter.removeChild(ele);
+                        }
+                        if (newamo<0){
+                            amo.textContent = 0;
+                        }
+                }
+                sort.onclick = function(){
+                    var el0 = document.getElementById("el0");
+                    elems.removeChild(el0);
+                    var el1 = document.getElementById("el1");
+                    elems.removeChild(el1);
+                    var el2 = document.getElementById("el2");
+                    elems.removeChild(el2);
+                    elems.appendChild(el0);
+                    elems.appendChild(el1);
+                    elems.appendChild(el2);
+                }
+
+            </script>
+        </div>
+    </body>
+</html>

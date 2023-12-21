@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <link rel="stylesheet" href="style.css">
+        <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+    </head>
+    <body>
+        <div class="container">
+            <script>
+                var reg = confirm("Желаете пройти регистрацию?")
+                alert(reg)
+                var cycle = true;
+                while(cycle){
+                    if (reg){
+                        alert("Круто")
+                        cycle=false;
+                    }else{
+                        reg = confirm("Желаете пройти регистрацию?")
+                        alert(reg)
+                    }
+                }
+            </script>
+            <script src="script1.js"></script>
+            
+            <div class="b1">
+                <div class="heart-btn">
+                    <div class="content">
+                      <span class="heart"></span>
+                      <span class="text">Like</span>
+                      <span class="numb"></span>
+                    </div>
+                </div>
+                <script>
+                    $(document).ready(function(){
+                      $('.content').click(function(){
+                        $('.content').toggleClass("heart-active")
+                        $('.text').toggleClass("heart-active")
+                        $('.numb').toggleClass("heart-active")
+                        $('.heart').toggleClass("heart-active")
+                      });
+                    });
+                </script>
+            </div>
+            <div class="cn">
+                <canvas id="canvas" width="1000" height="800" class=".canvas"></canvas>
+                <button id="button">Draw</button>
+                <script src="script2.js"></script>
+            </div>
+            
+
+        </div>
+    </body>
+</html>

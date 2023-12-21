@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            height: 200vh;
+            overflow-x: hidden;
+            background-color: #333;
+        }
+        footer {
+            background-color: black;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+
+        .parallax-container {
+            height: 100vh;
+            background: url('pic9.jpeg') center/cover no-repeat fixed;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            color: white;
+            font-size: 2em;
+            text-align: center;
+            transition: background 0.5s; /* Добавим плавный переход для фона */
+        }
+        #centered-container {
+            position: relative;
+            width: 200px; /* Задайте размеры по вашему усмотрению */
+            height: 200px;
+        }
+
+        #centered-image {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 100%; /* Задайте ширину на 100% */
+            height: 100%; /* Задайте высоту на 100% */
+        }
+        
+    </style>
+</head>
+<body>
+
+    <div class="parallax-container" id="parallax">
+        <div class="parallax-content">
+            <p id="dynamic-content"> контент здесь</p>
+        </div>
+
+        <div id="centered-container">
+            <img id="centered-image" src="tg.png" alt="Centered Image">
+        </div>
+        <script>
+            // JavaScript code to handle click events and display coordinates
+            document.addEventListener('click', function(event) {
+                var x = event.clientX;
+                var y = event.clientY;
+    
+                console.log('Clicked at coordinates: (' + x + ', ' + y + ')');
+            });
+        </script>
+        
+    </div>
+
+    <script>
+        document.addEventListener('scroll', function() {
+            var parallaxElement = document.getElementById('parallax');
+            var contentElement = document.getElementById('dynamic-content');
+            var scrollPosition = window.scrollY;
+
+            var parallaxValue = scrollPosition * 0.5;
+            parallaxElement.style.transform = 'translateY(' + parallaxValue + 'px)';
+
+            // Динамическое обновление содержимого
+            contentElement.innerText = 'Текущая прокрутка: ' + scrollPosition;
+        });
+    </script>
+    <footer>
+        <p>
+            paralax
+        </p>
+    </footer>
+</body>
+</html>

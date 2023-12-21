@@ -1,0 +1,29 @@
+fieldset{
+    width: 20%;
+}
+
+form.f1{
+    background-color: white;
+    width: 50%;
+}
+form.f2{
+    background-color: whitesmoke;
+    width: 50%;
+}
+body{
+    background-color: lightgray;
+}
+label{
+    background-color: wheat;
+}
+input:focus{
+    background-color: wheat;
+}
+::placeholder{
+    font-style: italic;
+}
+input{
+    margin: 2px;
+    border-color: black;
+    border: 3cap;
+}

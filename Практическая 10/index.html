@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <div class="task1">
+            <script>
+                function getRandom(min, max){
+                    return Math.floor(Math.random()*max - min + 1) + min;
+                }
+                function getRandomInt(max) {
+                    return Math.floor(Math.random() * max);
+                }
+                function isEmpty(obj){
+                    if (obj=='') return true;
+                    else return false
+                }
+
+                let str = 'qwertyuioplkjhgfdsazxcvbnmQWERTYUIOPLKJHGFDSAZXCVBNM';
+                let result = '';
+                let number1;
+                let number2;
+
+                let end = true;
+                while (end){
+                    for (let i=0; i<8; i++){
+                        result+=str[getRandom(0, str.length - 1)];
+                    }
+                    input = prompt("Введите строку: " + result);
+                    if (input == result){
+                        result = '';
+                        end = false;
+                    }else if (isEmpty(input)){
+                        alert("пустой ввод");
+                    }
+                    else{
+                        for (let i=0; i<2; i++){
+                            number1=getRandomInt(100);
+                            number2=getRandomInt(100);
+                        }
+                        input = prompt("Ведите сумму чисел: " + number1 + " + " + number2);
+                        if (input == (number1 + number2)){
+                            end = false;
+                        }
+                        else if(isEmpty(input)){
+                            alert("пустой ввод");
+                        }
+                        else{
+                            alert("ошибка")
+                        }
+                    }
+                }
+            </script>
+        </div>
+        <div class="task2">
+            <button id="button">добавить</button>
+            <button id="butt">показать</button>
+            <script> 
+                function read(){
+                    input = prompt("Введите число:");
+                    return parseInt(input);
+                }
+                function Accamulator(startingValue){
+                    var value = startingValue;
+                    button.onclick =  function(){
+                        value += read();
+                    }
+                    butt.onclick = function(){
+                        alert(value);
+                    }
+                }
+                Accamulator(1);
+                
+            </script>
+        </div>
+        <div class="task3">
+            <p id="stroke">Строка 1: FGHJHGFDFGHJHGFD</p>
+            <p id="stroke1">Строка 2: DFGHJHGFGHJHG</p>
+            <p id="stroke2">Строка 3: DFSFDSFHGFDFSFDDGFGSFAFGHJHGFD</p>
+            <script>
+                function truncateString(str, num) {
+                    if (str.length > num) {
+                        return str.slice(0, num) + "...";
+                    } else {
+                        return str;
+                    }
+                }
+                var change = document.getElementById('stroke');
+                var st = change.textContent;
+                change.textContent = truncateString(st, 25);
+
+                var change = document.getElementById('stroke1');
+                var st = change.textContent;
+                change.textContent = truncateString(st, 25);
+
+                var change = document.getElementById('stroke2');
+                var st = change.textContent;
+                change.textContent = truncateString(st, 25);
+            </script>
+        </div>
+    </body>
+</html>
